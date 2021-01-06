@@ -1,10 +1,12 @@
+package Interfejsy;
+
 public class Wykaz {
 
     public static void main(String[] args) {
         Promocja pr = new Promocja();
-        pr.dodajDoListy(new Towar("Towar 1", 192, 99.99));
-        pr.dodajDoListy(new Towar("Towar 2", 100, 59.99));
-        pr.dodajDoListy(new Towar("Towar 3", 388.90, 355.69));
+        pr.dodajDoListy(new Towar("Interfejsy.Towar 1", 192, 99.99));
+        pr.dodajDoListy(new Towar("Interfejsy.Towar 2", 100, 59.99));
+        pr.dodajDoListy(new Towar("Interfejsy.Towar 3", 388.90, 355.69));
         System.out.println(pr.getTytul());
         System.out.println(pr.getListe());
         System.out.println(pr.getInfoDodatkowe());

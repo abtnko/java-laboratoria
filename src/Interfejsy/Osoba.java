@@ -1,3 +1,5 @@
+package Interfejsy;
+
 public class Osoba {
     String imie;
     String nazwisko;

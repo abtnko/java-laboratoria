@@ -1,3 +1,5 @@
+package Interfejsy;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -7,7 +9,7 @@ public class Promocja implements ListaDanych{
 
     @Override
     public String getTytul() {
-        return "___________________________________" + "\n" + "Tytul: Wykaz towarow" + "\n" + "___________________________________";
+        return "___________________________________" + "\n" + "Tytul: Interfejsy.Wykaz towarow" + "\n" + "___________________________________";
     }
 
     @Override

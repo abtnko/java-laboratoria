@@ -1,3 +1,5 @@
+package Interfejsy;
+
 public class Towar {
     String nazwa;
     double cenaPodstawowa;
