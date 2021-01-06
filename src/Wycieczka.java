@@ -6,8 +6,8 @@ public class Wycieczka implements ListaDanych {
     public ArrayList<Osoba> lista = new ArrayList<>();
 
     @Override
-    public String getTytul(String tytul) {
-        return "___________________________________" + "\n" + "Tytul: " + tytul + "\n" + "___________________________________";
+    public String getTytul() {
+        return "___________________________________" + "\n" + "Tytul: Uczestnicy wycieczki" + "\n" + "___________________________________";
     }
 
     @Override

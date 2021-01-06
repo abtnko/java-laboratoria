@@ -6,8 +6,8 @@ public class Promocja implements ListaDanych{
     public ArrayList<Towar> lista = new ArrayList<>();
 
     @Override
-    public String getTytul(String tytul) {
-        return "___________________________________" + "\n" + "Tytul: " + tytul + "\n" + "___________________________________";
+    public String getTytul() {
+        return "___________________________________" + "\n" + "Tytul: Wykaz towarow" + "\n" + "___________________________________";
     }
 
     @Override
