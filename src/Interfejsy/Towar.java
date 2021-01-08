@@ -22,4 +22,8 @@ public class Towar {
         this.cenaPodstawowa = cenaPodstawowa;
         this.cenaPromocyjna = cenaPromocyjna;
     }
+
+    public String toString(){
+        return nazwa + " " + cenaPodstawowa + " " + cenaPromocyjna;
+    }
 }

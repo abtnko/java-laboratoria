@@ -29,4 +29,8 @@ public class Osoba {
         return kwotaWplaty;
     }
 
+    public String toString(){
+        return imie + " " + nazwisko + " " + pesel + " " + kwotaWplaty;
+    }
+
 }
