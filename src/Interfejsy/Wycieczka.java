@@ -1,43 +1,38 @@
 package Interfejsy;
 
-import java.util.Iterator;
-
 public class Wycieczka implements ListaDanych {
 
-    public Osoba[] uczestnicy;
-    private String[] tresc;
+    String[] tresc;
 
     @Override
     public String getTytul() {
-        return "___________________________________" + "\n" + "Tytul: Uczestnicy wycieczki" + "\n" + "___________________________________";
+        return "Wykaz uczestnikow";
     }
 
     @Override
-    public String getInfoDodatkowe() {
-        return "___________________________________" + "\n" + "Suma wplat wszystkich uczestnikow: " + wyliczSumeWplat() + "\n" + "___________________________________";
+    public String getInfoDodatkowe(Object[] objects) {
+        return "Suma wplat: " + wyliczSumeWplat(objects);
     }
 
     @Override
-    public String[] getTresc() {
-        tresc = new String[uczestnicy.length];
-        for(int i=0; i<uczestnicy.length; i++){
-            tresc[i] = uczestnicy[i].toString();
+    public String[] getTresc(Object[] objects) {
+        tresc = new String[objects.length];
+        for(int i=0; i<objects.length; i++){
+            tresc[i] = objects[i].toString();
         }
         return tresc;
     }
 
     @Override
     public String getNaglowek() {
-        return "Naglowek";
+        return "Uczestnicy";
     }
 
-    private double wyliczSumeWplat(){
+    private String wyliczSumeWplat(Object[] objects){
         double sumaWplat = 0;
-        Iterator itr = tresc[i].iterator();
-        while (itr.hasNext()) {
-            Osoba os = (Osoba) itr.next();
-            sumaWplat += os.getKwotaWplaty();
+        for(Osoba osoba:(Osoba[]) objects){
+            sumaWplat += osoba.getKwotaWplaty();
         }
-        return sumaWplat;
+        return "" + sumaWplat + "";
     }
 }

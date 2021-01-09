@@ -3,28 +3,22 @@ package Interfejsy;
 public class Main {
     public static void main(String[] args) {
         Osoba[] osoby = new Osoba[3];
-        osoby[1] = new Osoba("Anna", "Kowalska", 353523354, 54);
-        osoby[2] = new Osoba("Jan", "Kowalski", 636436346, 100);
-        osoby[3] = new Osoba("Piotr", "Jablonski", 543345345, 352);
+        osoby[0] = new Osoba("Anna", "Kowalska", 353523354, 54);
+        osoby[1] = new Osoba("Jan", "Kowalski", 636436346, 100);
+        osoby[2] = new Osoba("Piotr", "Jablonski", 543345345, 352);
 
-        ListaDanych ld = new Wycieczka()
-        Wykaz wycieczka = new Wykaz() {
-        };
+        ListaDanych ldW = new Wycieczka();
+        Wykaz wycieczka = new Wykaz(ldW);
+        wycieczka.wyswietlWykaz(osoby);
 
-        ListaDanych pr = new Promocja();
-        pr.dodajDoListy(new Towar("Interfejsy.Towar 1", 192, 99.99));
-        pr.dodajDoListy(new Towar("Interfejsy.Towar 2", 100, 59.99));
-        pr.dodajDoListy(new Towar("Interfejsy.Towar 3", 388.90, 355.69));
-        System.out.println(pr.getTytul());
-        System.out.println(pr.getListe());
-        System.out.println(pr.getInfoDodatkowe());
+        Towar[] towary = new Towar[3];
+        towary[0] = new Towar("Towar 1", 100, 90.99);
+        towary[1] = new Towar("Towar 2", 250, 239.90);
+        towary[2] = new Towar("Towar 3", 55.50, 49.80);
 
-        Wycieczka w = new Wycieczka();
-        w.dodajDoListy(new Osoba("Anna", "Kowalska", 353523354, 54));
-        w.dodajDoListy(new Osoba("Jan", "Kowalski", 636436346, 100));
-        w.dodajDoListy(new Osoba("Piotr", "Jablonski", 543345345, 352));
-        System.out.println(w.getTytul());
-        System.out.println(w.getListe());
-        System.out.println(w.getInfoDodatkowe());
+        ListaDanych ldP = new Promocja();
+        Wykaz promocja = new Wykaz(ldP);
+        promocja.wyswietlWykaz(towary);
+
     }
 }

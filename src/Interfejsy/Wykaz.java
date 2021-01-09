@@ -8,14 +8,14 @@ public class Wykaz {
         _ld = ld;
     }
 
-    public void wyswietlWykaz(){
-        System.out.println( "________________________" + "\n" + _ld.getTytul() + "\n" + "________________________");
-        System.out.println( "________________________" + "\n" + "L.p. " + _ld.getNaglowek() + "\n" + "________________________");
-        String[] tabela = _ld.getTresc();
+    public void wyswietlWykaz(Object[] objects){
+        System.out.println( "________________________" + "\n" + _ld.getTytul());
+        System.out.println( "________________________" + "\n" + "L.p. " + _ld.getNaglowek());
+        String[] tabela = _ld.getTresc(objects);
         for(int i=0; i<tabela.length; i++){
-            System.out.println((i+1) + " " + tabela[i]);
+            System.out.println("________________________" + "\n" + (i+1) + " " + tabela[i]);
         }
-        System.out.println(_ld.getInfoDodatkowe());
+        System.out.println("________________________" + "\n" +  _ld.getInfoDodatkowe(objects));
     }
 
 }
