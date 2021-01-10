@@ -2,7 +2,11 @@ package Interfejsy;
 
 public class Wycieczka implements ListaDanych {
 
-    String[] tresc;
+    Osoba[] osoby;
+
+    public Wycieczka(Osoba[] osoby){
+        this.osoby = osoby;
+    }
 
     @Override
     public String getTytul() {
@@ -10,15 +14,15 @@ public class Wycieczka implements ListaDanych {
     }
 
     @Override
-    public String getInfoDodatkowe(Object[] objects) {
-        return "Suma wplat: " + wyliczSumeWplat(objects);
+    public String getInfoDodatkowe() {
+        return "Suma wplat: " + wyliczSumeWplat();
     }
 
     @Override
-    public String[] getTresc(Object[] objects) {
-        tresc = new String[objects.length];
-        for(int i=0; i<objects.length; i++){
-            tresc[i] = objects[i].toString();
+    public String[] getTresc() {
+        String[] tresc = new String[osoby.length];
+        for(int i=0; i<osoby.length; i++){
+            tresc[i] = osoby[i].toString();
         }
         return tresc;
     }
@@ -28,9 +32,9 @@ public class Wycieczka implements ListaDanych {
         return "Uczestnicy";
     }
 
-    private String wyliczSumeWplat(Object[] objects){
+    private String wyliczSumeWplat(){
         double sumaWplat = 0;
-        for(Osoba osoba:(Osoba[]) objects){
+        for(Osoba osoba:osoby){
             sumaWplat += osoba.getKwotaWplaty();
         }
         return "" + sumaWplat + "";

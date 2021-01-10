@@ -2,7 +2,11 @@ package Interfejsy;
 
 public class Promocja implements ListaDanych{
 
-    private String[] tresc;
+    Towar[] towary;
+
+    public Promocja(Towar[] towary){
+        this.towary = towary;
+    }
 
     @Override
     public String getTytul() {
@@ -10,15 +14,15 @@ public class Promocja implements ListaDanych{
     }
 
     @Override
-    public String getInfoDodatkowe(Object[] objects) {
-        return "Sredni rabat: " + wyliczRabat(objects) + "%";
+    public String getInfoDodatkowe() {
+        return "Sredni rabat: " + wyliczRabat() + "%";
     }
 
     @Override
-    public String[] getTresc(Object[] lista) {
-        tresc = new String[lista.length];
-        for(int i=0; i<lista.length; i++){
-            tresc[i] = lista[i].toString();
+    public String[] getTresc() {
+        String[] tresc = new String[towary.length];
+        for(int i=0; i<towary.length; i++){
+            tresc[i] = towary[i].toString();
         }
         return tresc;
     }
@@ -28,10 +32,10 @@ public class Promocja implements ListaDanych{
         return "Towar";
     }
 
-    private double wyliczRabat(Object[] objects){
+    private double wyliczRabat(){
         double sumaCenPodstawowych = 0;
         double sumaCenPromocyjnych = 0;
-        for (Towar towar: (Towar[]) objects){
+        for (Towar towar: towary){
             sumaCenPodstawowych += towar.getCenaPodstawowa();
             sumaCenPromocyjnych += towar.getCenaPromocyjna();
         }
